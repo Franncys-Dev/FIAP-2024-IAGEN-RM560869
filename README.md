@@ -9,10 +9,10 @@
 Tabela descriiva dos status possíveis dos sensores
 |campo|tipo|descrição|
 |-|-|-|
-|id (primary key)|varchar(5)|identificação única|
-|desc|varchar(50)|descrição do significado do id|
+|id_sts (primary key)|varchar(5)|identificação única|
+|desc_sts|varchar(50)|descrição do significado do id|
 
-Chave primaria *id* relação 1:N com tabelas:
+Chave primaria *id_sts* relação 1:N com tabelas:
  - TB_SNSR_PH
  - TB_SNSR_AGUA
  - TB_SNSR_NUTRI
@@ -23,10 +23,10 @@ Chave primaria *id* relação 1:N com tabelas:
 Tabela de cadastro dos sensores de PH
 campo|tipo|descrição
 -|-|-
-id (primary key)|int|código único de identificação de sensor
+id_sns_ph (primary key)|int|código único de identificação de sensor
 status (foreing key)|varchar(5)|código de status (TB_STATUS)
 nvl_ph|int|valor da última medição de PH
-dat_hor_alter|datetime|data e hora da última alteração
+dat_alter|date|data da última alteração
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
@@ -37,10 +37,10 @@ Chave estrangeira *status* relaçao N:1 com tabela:
 Tabela de cadastro dos sensores de Água
 campo|tipo|descrição
 -|-|-
-id (primary key)|int|código único de identificação de sensor
+id_sns_agua (primary key)|int|código único de identificação de sensor
 status (foreing key)|varchar(5)|código de status (TB_STATUS)
 nvl_agua|int|valor da última medição de água
-dat_hor_alter|datetime|data e hora da última alteração
+dat_alter|date|data da última alteração
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
@@ -51,11 +51,11 @@ Chave estrangeira *status* relaçao N:1 com tabela:
 Tabela de cadastro dos sensores de Nutrientes
 campo|tipo|descrição
 -|-|-
-id (primary key)|int|código único de identificação de sensor
+id_sns_nutri (primary key)|int|código único de identificação de sensor
 status (foreing key)|varchar(5)|código de status (TB_STATUS)
 nvl_p|int|valor da última medição de fósforo
 nvl_k|int|valor da última medição de potássio
-dat_hor_alter|datetime|data e hora da última alteração
+dat_alter|date|data da última alteração
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
@@ -66,33 +66,33 @@ Chave estrangeira *status* relaçao N:1 com tabela:
 Tabela de cadastro de culturas
 campo|tipo|descrição
 -|-|-
-id (primary key)|int|código único de identificação de cultura
+id_cultivo (primary key)|int|código único de identificação de cultura
 nome_prod|varchar(15)|nome da cultura
-dat_hor_cad|datetime|data e hora do cadastro
-dat_hor_alter|datetime|data e hora da última alteração
+dat_cad|date|data do cadastro
+dat_alter|date|data da última alteração
 
-Chave primaria *id* relação 1:1 com tabelas:
+Chave primaria *id_cultivo* relação 1:1 com tabelas:
  - TB_SNSR_PH
  - TB_SNSR_AGUA
  - TB_SNSR_NUTRI
  - TB_MNTOR
  
-Chave primaria *id* relação 1:N com tabelas:
+Chave primaria *id_cultivo* relação 1:N com tabelas:
  - TB_HIST
 
 #### TB_MNTOR
 Tabela de monitoração de culturas
 campo|tipo|descrição
 -|-|-
-id (primary key)|int|código único de identificação de monitoração
+id_mntor (primary key)|int|código único de identificação de monitoração
 id_cultivo (foreing key)|int|código da cultura associada (TB_CULTIVOS)
 status (foreing key)|varchar(5)|código de status (TB_STATUS)
 nvl_ph|int|valor da última medição de PH
 nvl_agua|int|valor da última medição de água
 nvl_p|int|valor da última medição de fósforo
 nvl_k|int|valor da última medição de potássio
-dat_hor_cad|datetime|data e hora do cadastro
-dat_hor_alter|datetime|data e hora da última alteração
+dat_cad|date|data do cadastro
+dat_alter|date|data da última alteração
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
@@ -103,14 +103,14 @@ Chave estrangeira *status* relaçao N:1 com tabela:
 Tabela de histórico de monitoramento
 campo|tipo|descrição
 -|-|-
-id (primary key)|int|código único de identificação de histórico
+id_hist (primary key)|int|código único de identificação de histórico
 id_cultivo (foreing key)|int|código da cultura associada (TB_CULTIVOS)
 status (foreing key)|varchar(5)|código de status (TB_STATUS)
 nvl_ph|int|valor da medição de PH na hora da gravação do histórico
 nvl_agua|int|valor da medição de água na hora da gravação do histórico
 nvl_p|int|valor da medição de fósforo na hora da gravação do histórico
 nvl_k|int|valor da medição de potássio na hora da gravação do histórico
-dat_hor_cad|datetime|data e hora do cadastro
+dat_cad|date|data do cadastro
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
