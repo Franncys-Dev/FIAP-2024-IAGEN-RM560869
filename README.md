@@ -30,6 +30,7 @@ dat_alter|date|data da última alteração
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
+
 Chave estrangeira *status* relaçao N:1 com tabela:
  -  TB_STATUS   
 
@@ -44,6 +45,7 @@ dat_alter|date|data da última alteração
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
+
 Chave estrangeira *status* relaçao N:1 com tabela:
  -  TB_STATUS
 
@@ -59,6 +61,7 @@ dat_alter|date|data da última alteração
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
+
 Chave estrangeira *status* relaçao N:1 com tabela:
  -  TB_STATUS
 
@@ -96,6 +99,7 @@ dat_alter|date|data da última alteração
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
+
 Chave estrangeira *status* relaçao N:1 com tabela:
  -  TB_STATUS
 
@@ -114,5 +118,6 @@ dat_cad|date|data do cadastro
 
 Chave estrangeira *id_cultivo* relação 1:1 com tabelas:
  - TB_CULTIVO
+
 Chave estrangeira *status* relaçao N:1 com tabela:
  -  TB_STATUS
